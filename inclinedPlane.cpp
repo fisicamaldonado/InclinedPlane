@@ -35,7 +35,7 @@ int main() {
     rad_angle = angleToRad(angle);
     cout.precision(3);
     cout << "The Weight of the mass is " << Weight(mass, rad_angle)
-         << " N\n The Normal force is " << Normal(weight) << " N\n The minimum Friction to not slip down is " 
+         << " N\n The Normal force is " << Normal(weight) << " N\n The minimum Friction to not slide down is " 
          << maxFriction(weight) << "N\n and the min friction coeficient is "<< tan(rad_angle) <<endl;
     
     return 0;
