@@ -17,4 +17,8 @@ To get started with the Inclined Planes Study Program, follow these simple steps
 - Run the compiled binary and provide the necessary inputs, such as the mass of the object and the angle of the inclined plane.
 - View the calculated results, including the weight, normal force, maximum friction force, and friction coefficient.
 
+Contributing:
+
+Contributions to the Inclined Planes Study Program are welcome! If you have any ideas, suggestions, or bug reports, please open an issue on the GitHub repository. Thanks.
+
 Enjoy!
