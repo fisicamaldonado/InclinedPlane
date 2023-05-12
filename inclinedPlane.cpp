@@ -1,42 +1,48 @@
 #include <iostream>
 #include <cmath>
 
-using namespace std;
-
-double mass, weight, normal, max_friction, angle, rad_angle;
-const double PI = 3.1416;
-
-double Weight (double mass, double rad_angle){
-    return weight = mass*9.8;
+double Weight(double mass_kg, double rad_angle) {
+    return mass_kg * 9.8;
 }
 
-double Normal (double weight){
-    
-    return weight * cos (rad_angle);
+double Normal(double weight_N, double rad_angle) {
+    return weight_N * std::cos(rad_angle);
 }
 
-double maxFriction (double weight){
-    return weight * sin(rad_angle);
-    
+double maxFriction(double weight_N, double rad_angle) {
+    return weight_N * std::sin(rad_angle);
 }
 
-double angleToRad (double angle){
-    
-    return (angle) * PI/180;
+double angleToRad(double angle_deg) {
+    const double PI = 3.1416;
+    return angle_deg * PI / 180.0;
 }
 
 int main() {
-    // insert code here...
-    cout << "Inclined Plane - Physics \n" << "by Prof. Pablo Vaz\n";
-    cout << "Enter mass m (in Kg) = ";
-    cin >> mass;
-    cout << "Enter the angle of the plane θ = ";
-    cin >> angle;
-    rad_angle = angleToRad(angle);
-    cout.precision(3);
-    cout << "The Weight of the mass is " << Weight(mass, rad_angle)
-         << " N\n The Normal force is " << Normal(weight) << " N\n The minimum Friction to not slide down is " 
-         << maxFriction(weight) << "N\n and the min friction coeficient is "<< tan(rad_angle) <<endl;
+    double mass_kg, angle_deg;
     
+    std::cout << "Inclined Plane - Physics\n"
+              << "by Prof. Pablo Vaz\n";
+
+    std::cout << "Enter mass (in kg): ";
+    std::cin >> mass_kg;
+
+    std::cout << "Enter the angle of the plane (in degrees): ";
+    std::cin >> angle_deg;
+
+    double rad_angle = angleToRad(angle_deg);
+    double weight_N = Weight(mass_kg, rad_angle);
+    double normal_N = Normal(weight_N, rad_angle);
+    double max_friction_N = maxFriction(weight_N, rad_angle);
+    double friction_coefficient = std::tan(rad_angle);
+
+    std::cout.precision(3);
+    std::cout << "The weight of the mass is " << weight_N << " N\n"
+              << "The normal force is " << normal_N << " N\n"
+              << "The minimum friction force required to prevent slipping is "
+              << max_friction_N << " N\n"
+              << "The minimum friction coefficient is " << friction_coefficient << std::endl;
+
     return 0;
 }
+
